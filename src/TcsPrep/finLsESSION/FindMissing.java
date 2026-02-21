@@ -2,7 +2,7 @@ package TcsPrep.finLsESSION;
 
 import java.util.Scanner;
 
-public class FinfMissing {
+public class FindMissing {
     public static int findMissing(int[] num, int n){
         int acSum = (n*(n + 1))/2;
         int sum = 0;
