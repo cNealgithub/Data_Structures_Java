@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+  static int count = 0;
+  public static void countWays(int g, int y, int r, char prev) {
+        // If all balls are use
+        if (g == 0 && y == 0 && r == 0) {
+            count++;
+            return;
+        }
+        // Place Green
+        if (g > 0 && prev != 'G') {
+            countWays(g - 1, y, r, 'G');
+        }
+        // Place Yellow
+        if (y > 0 && prev != 'Y') {
+            countWays(g, y - 1, r, 'Y');
+        }
+        // Place Red
+        if (r > 0 && prev != 'R') {
+            countWays(g, y, r - 1, 'R');
+        }
+}
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int g = sc.nextInt();
+        int y = sc.nextInt();
+        int r = sc.nextInt();
+
+        countWays(g, y, r, ' ');
+
+        System.out.print(count);
+        sc.close();
+    }
+}
